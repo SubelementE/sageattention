@@ -91,7 +91,6 @@ cmake --build build_310
 # 产物: build_310/sageattention310_custom (device 侧 dav-m300)
 ```
 
-状态：交叉编译通过（CANN 8.2.RC1 的 bisheng 已支持 `dav-m300`）；无 310B 设备，未上板。
 310B 不支持 `--cce-aicore-block-local-init`，CMake 已为 310 目标移除该选项。
 
 
@@ -165,5 +164,4 @@ stream 排序；需要释放时调用 `sageattention310_area_release()`。
 | 数据类型 | FP16 输入输出；Q/K 内部 per-token INT8 量化（GPU 对齐），PV 为 FP16；910B 无 FP8，未启用 FP8 PV |
 | shape | `d` 为编译期常量（当前 64）；`N` 必须是 64/128/256 的倍数 |
 | 功能范围 | 仅 non-causal、Q/K/V 头数相同；不支持 GQA/MQA、变长、dropout |
-| 上板状态 | 仅交叉编译通过；`scripts/gen_data.py` 已按 `[BH,N,d]` 生成输入与 golden |
 
