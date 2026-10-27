@@ -38,8 +38,6 @@ PV 保持 FP16（910B 无 FP8 Cube 算力）：
 
 ```
 sageattention/
-├── docs/           # 设计、计划、环境、审查、串讲文档
-├── build/          # 编译输出
 ├── scripts/        # 测试脚本
 │   ├── gen_data.py       # 测试数据生成 (支持 FP16/FP32/BF16)
 │   └── verify_result.py  # 精度验证 (自动选择 rtol/atol)
